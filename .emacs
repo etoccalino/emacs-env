@@ -21,14 +21,14 @@
 ;; General (re-)bindings
 (load "~/.emacs.d/conf/man-emacs-bindings.el")
 
+;; Repositories
+(load "~/.emacs.d/conf/man-emacs-repositories.el")
+
 ;; Theme/s
 (load "~/.emacs.d/conf/man-emacs-themes.el")
 
 ;; Plugins (auto-complete, ace-jump, pyflakes, etc)
 (load "~/.emacs.d/conf/man-emacs-plugins.el")
-
-;; Repositories
-(load "~/.emacs.d/conf/man-emacs-repositories.el")
 
 ;; Special modes (mail utils and my-write-mode)
 (load "~/.emacs.d/conf/man-emacs-misc.el")

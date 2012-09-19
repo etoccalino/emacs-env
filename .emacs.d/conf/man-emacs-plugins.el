@@ -13,6 +13,12 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+;; Find Things Fast
+(add-to-list 'load-path "~/.emacs.d/plugins/find-things-fast")
+(require 'find-things-fast)
+(global-set-key (kbd "C-x M-f") 'ftf-find-file)
+(global-set-key (kbd "C-x M-s") 'ftf-grepsource)
+
 ;; PyFlakes integration
 (add-to-list 'load-path "~/.emacs/elpa/pyflakes-1.0")
 (add-to-list 'load-path "~/.emacs/elpa/flymake-cursor-1.0.2")

@@ -1,7 +1,6 @@
 ;; DEPENDENCY WARNINGS:
-;; * ace-jump, from ELPA
-;; * auto-complete, external
-;; * pep8, system, required?
+;; * pep8, system
+;; * pyflakes, system
 
 ;; Auto Complete mode
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4/")

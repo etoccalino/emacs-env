@@ -9,6 +9,10 @@
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
+;; Truncate lines over 80 chars, by default
+(set-fill-column 79)
+(toggle-truncate-lines 1)
+
 ;; Depends on the inconsolata font being installed in the system. It's worth it.
 (set-frame-font "inconsolata-11")
 

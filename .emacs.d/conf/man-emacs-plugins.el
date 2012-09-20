@@ -34,7 +34,6 @@
 			(file-name-directory buffer-file-name))))
       (list "pyflakes" (list local-file))))
 
-  (require 'rfringe)
   (add-to-list 'flymake-allowed-file-name-masks
 	       '("\\.py\\'" flymake-pyflakes-init))
 
@@ -42,7 +41,8 @@
   (global-set-key [f10] 'flymake-goto-prev-error)
   (global-set-key [f11] 'flymake-goto-next-error)
   )
-(load-library "flymake-cursor")
+(require 'flymake-cursor)
+(require 'rfringe)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; PEP8 command. It will complain if white space is left about.

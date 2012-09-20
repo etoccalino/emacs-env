@@ -1,9 +1,5 @@
-;; Themes repository
-(setq custom-theme-directory "~/.emacs.d/themes")
-
-;; DEPENDENCY WARNING: zenburn!
-
-;; Default theme: zenburn, for emacs24
+;; Default theme: zenburn
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/zenburn-theme-1.5")
 (load-theme 'zenburn t)
 
 ;;

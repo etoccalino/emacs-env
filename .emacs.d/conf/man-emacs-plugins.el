@@ -18,6 +18,8 @@
 (require 'find-things-fast)
 (global-set-key (kbd "C-x M-f") 'ftf-find-file)
 (global-set-key (kbd "C-x M-s") 'ftf-grepsource)
+;; add Django templates to the searched file types
+(add-hook 'python-mode-hook (lambda () (ftf-add-filetypes '("*.html"))))
 
 ;; PyFlakes integration
 (add-to-list 'load-path "~/.emacs/elpa/pyflakes-1.0")

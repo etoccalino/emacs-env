@@ -2,13 +2,12 @@
 ;; * inconsolata font, system
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
  '(column-number-mode t)
  '(menu-bar-mode nil)
  '(show-paren-mode t)
- '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
-
+;; No scroll bars.
+(scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default
 (set-fill-column 79)
 (toggle-truncate-lines 1)

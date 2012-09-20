@@ -44,6 +44,8 @@
 (require 'flymake-cursor)
 (require 'rfringe)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+;; Disable flymake when editing HTML templates
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
 
 ;; PEP8 command. It will complain if white space is left about.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

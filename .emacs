@@ -12,9 +12,6 @@
     (byte-compile-file buffer-file-name)))
 
 
-;; Is this necessary?
-(add-to-list 'load-path "~/.emacs.d")
-
 ;; GUI customizations
 (load "~/.emacs.d/conf/man-emacs-gui.el")
 

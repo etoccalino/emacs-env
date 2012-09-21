@@ -19,6 +19,10 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+;; Uniquify file names, using path-like style.
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
 ;;
 ;; byte-compile init files.
 (add-hook 'after-save-hook 'byte-compile-current-buffer)

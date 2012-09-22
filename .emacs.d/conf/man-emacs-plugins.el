@@ -12,6 +12,7 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; Find Things Fast
+(add-to-list 'load-path "~/.emacs.d/plugins/find-things-fast")
 (require 'find-things-fast)
 (global-set-key (kbd "C-x M-f") 'ftf-find-file)
 (global-set-key (kbd "C-x M-s") 'ftf-grepsource)

@@ -22,9 +22,9 @@
 (add-hook 'python-mode-hook (lambda () (ftf-add-filetypes '("*.html"))))
 
 ;; PyFlakes integration
-(add-to-list 'load-path "~/.emacs/elpa/pyflakes-1.0")
-(add-to-list 'load-path "~/.emacs/elpa/flymake-cursor-1.0.2")
-(add-to-list 'load-path "~/.emacs/elpa/rfringe-1.0.1")
+(add-to-list 'load-path "~/.emacs.d/elpa/pyflakes-1.0")
+(add-to-list 'load-path "~/.emacs.d/elpa/flymake-cursor-1.0.2")
+(add-to-list 'load-path "~/.emacs.d/elpa/rfringe-1.0.1")
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy

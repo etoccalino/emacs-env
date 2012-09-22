@@ -46,6 +46,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (require 'pep8)
 
+;; Simple refactory through Iedit
+(require 'iedit)
+
 ;;
 ;; byte-compile init files.
 (add-hook 'after-save-hook 'byte-compile-current-buffer)

@@ -3,13 +3,14 @@
 
 (custom-set-variables
  '(column-number-mode t)
+ '(fill-column 79)
  '(menu-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 ;; No scroll bars.
-(scroll-bar-mode -1)
+(setq scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default
-(set-fill-column 79)
+(setq fill-column 79)
 (toggle-truncate-lines 1)
 
 ;; Depends on the inconsolata font being installed in the system. It's worth it.

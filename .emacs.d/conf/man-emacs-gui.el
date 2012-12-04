@@ -6,8 +6,9 @@
  '(fill-column 79)
  '(menu-bar-mode nil)
  '(show-paren-mode t)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
 ;; No scroll bars.
+ '(scroll-bar-mode nil))
 (setq scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default
 (setq fill-column 79)

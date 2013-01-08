@@ -8,7 +8,10 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
 ;; No scroll bars.
- '(scroll-bar-mode nil))
+ '(scroll-bar-mode nil)
+;; Two-space indent for javascript mode.
+ '(js-indent-level 2))
+
 (setq scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default
 (setq fill-column 79)

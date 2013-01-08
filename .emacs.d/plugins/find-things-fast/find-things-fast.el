@@ -97,9 +97,8 @@
 ;;; Code:
 
 (defvar ftf-filetypes
-  '("*.h" "*.hpp" "*.cpp" "*.c" "*.cc" "*.cpp" "*.inl" "*.grd" "*.idl" "*.m"
-    "*.mm" "*.py" "*.sh" "*.cfg" "*SConscript" "SConscript*" "*.scons"
-    "*.vcproj" "*.vsprops" "*.make" "*.gyp" "*.gypi")
+  '("*.h" "*.hpp" "*.cpp" "*.c" "*.cc" "*.cpp" "*.m" "*.mm" "*.py" "*.js"
+    "*.html" "*.handlebars" "*.sh" "*.cfg" "*.make" "*.gyp" "*.gypi")
   "A list of filetype patterns that grepsource will use. Obviously biased for
 chrome development.")
 

@@ -29,3 +29,6 @@
 
 ;; Special modes (mail utils and my-write-mode)
 (load "~/.emacs.d/conf/man-emacs-misc.el")
+
+;; Configuration for Elfeed reader
+(load "~/.emacs.d/conf/man-emacs-news.el")

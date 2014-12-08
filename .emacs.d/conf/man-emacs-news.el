@@ -26,7 +26,7 @@
      ("http://feeds.wired.com/wired/index")
      ("http://feeds.feedburner.com/TechCrunch/")
      ("http://nullprogram.com/feed/")))
- '(elfeed-search-filter "@6-months-ago")
+ '(elfeed-search-filter "@6-months-ago ")
  '(elfeed-search-refresh-rate 30)
 )
 

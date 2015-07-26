@@ -7,13 +7,15 @@
  '(menu-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
-;; No scroll bars.
+ ;; No scroll bars.
  '(scroll-bar-mode nil)
-;; Two-space indent for javascript mode.
+ ;; Two-space indent for javascript mode.
  '(js-indent-level 2)
-;; Allow desktop notifications and auto-scrolling in ERC mode
+ ;; Allow desktop notifications and auto-scrolling in ERC mode
   '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track)))
- )
+ ;; No splash screen on startup.
+  '(inhibit-startup-screen t)
+)
 
 (setq scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default

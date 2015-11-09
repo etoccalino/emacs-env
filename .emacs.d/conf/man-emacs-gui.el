@@ -12,10 +12,10 @@
  ;; Two-space indent for javascript mode.
  '(js-indent-level 2)
  ;; Allow desktop notifications and auto-scrolling in ERC mode
-  '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track)))
+ '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track)))
  ;; No splash screen on startup.
-  '(inhibit-startup-screen t)
-)
+ '(inhibit-startup-screen t)
+ )
 
 (setq scroll-bar-mode -1)
 ;; Truncate lines over 80 chars, by default
@@ -37,6 +37,9 @@
 ;; Uniquify file names, using path-like style.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+
+;; For rendering with newsticker.
+(require 'shr)
 
 ;;
 ;; byte-compile init files.

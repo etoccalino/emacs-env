@@ -1,15 +1,13 @@
+
 ;;
-;; Configuration for newsticker and elfeed (still haven't decided which one to use).
+;; Configuration Elfeed (Available on MELPA)
 ;;
 
 (custom-set-variables
-
  ;; Elfeed configuration
  '(elfeed-db-directory "~/.emacs.d/elfeed")
  '(elfeed-feeds
    '(("http://etoccalino.com/rss")
-     ("http://xkcd.com/rss.xml")
-     ("http://feeds.feedburner.com/oatmealfeed")
      ("http://daringfireball.net/feeds/articles")
      ("http://feeds.feedburner.com/TheBigPicture")
      ("http://feeds.feedburner.com/IeeeSpectrum")
@@ -25,7 +23,14 @@
      ("http://feeds.wired.com/wiredbusinessblog")
      ("http://feeds.wired.com/wired/index")
      ("http://feeds.feedburner.com/TechCrunch/")
-     ("http://nullprogram.com/feed/")))
+     ("http://nullprogram.com/feed/")
+     ("http://xkcd.com/rss.xml")
+     ("http://feeds.feedburner.com/oatmealfeed")
+     ("http://www.ohjoysextoy.com/feed/")
+     ("http://www.businessweek.com/feeds/blogs/the-management-blog.rss")
+     ("http://www.reddit.com/r/Python/.rss")
+     ("https://www.archlinux.org/feeds/news/")
+     ))
  '(elfeed-search-filter "@6-months-ago ")
  '(elfeed-search-refresh-rate 30)
 )

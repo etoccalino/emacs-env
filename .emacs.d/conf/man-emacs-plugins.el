@@ -49,6 +49,11 @@
 ;; Simple refactory through Iedit
 (require 'iedit)
 
+;; Yasnippet basic setup.
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151108.1505")
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;;
 ;; byte-compile init files.
 (add-hook 'after-save-hook 'byte-compile-current-buffer)

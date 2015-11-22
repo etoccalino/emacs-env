@@ -52,7 +52,15 @@
 ;; Yasnippet basic setup.
 (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151108.1505")
 (require 'yasnippet)
-(yas-global-mode 1)
+(yas-reload-all)
+; use S-TAB for expansion
+(define-key yas-minor-mode-map (kbd "<backtab>") nil)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+; selectively activate yas-minor-mode
+(add-hook 'python-mode-hook 'yas-minor-mode)
+(add-hook 'html-mode-hook 'yas-minor-mode)
 
 ;;
 ;; byte-compile init files.

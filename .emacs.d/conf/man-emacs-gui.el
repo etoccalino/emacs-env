@@ -38,9 +38,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; For rendering with newsticker.
-(require 'shr)
-
 ;;
 ;; byte-compile init files.
 (add-hook 'after-save-hook 'byte-compile-current-buffer)

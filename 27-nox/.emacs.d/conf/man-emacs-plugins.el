@@ -19,28 +19,8 @@
 ;; add Django templates to the searched file types
 (add-hook 'python-mode-hook (lambda () (ftf-add-filetypes '("*.html"))))
 
-;; PyFlakes integration
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		       'flymake-create-temp-inplace))
-	   (local-file (file-relative-name
-			temp-file
-			(file-name-directory buffer-file-name))))
-      (list "pyflakes" (list local-file))))
-
-  (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pyflakes-init))
-
-  ;; bindings!
-  (global-set-key [f10] 'flymake-goto-prev-error)
-  (global-set-key [f11] 'flymake-goto-next-error)
-  )
-(require 'flymake-cursor)
-(require 'rfringe)
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-;; Disable flymake when editing HTML templates
-(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
+;; RJSX-mode
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode))
 
 ;; PEP8 command. It will complain if white space is left about.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -48,19 +28,6 @@
 
 ;; Simple refactory through Iedit
 (require 'iedit)
-
-;; Yasnippet basic setup.
-(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20151108.1505")
-(require 'yasnippet)
-(yas-reload-all)
-; use S-TAB for expansion
-(define-key yas-minor-mode-map (kbd "<backtab>") nil)
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-; selectively activate yas-minor-mode
-(add-hook 'python-mode-hook 'yas-minor-mode)
-(add-hook 'html-mode-hook 'yas-minor-mode)
 
 ;;
 ;; byte-compile init files.

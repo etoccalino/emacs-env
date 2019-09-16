@@ -43,16 +43,14 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(erc-modules
-   (quote
-    (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track)))
+   '(autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track))
  '(fill-column 79)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   (quote
-    (zenburn-theme yasnippet rfringe pyflakes pep8 iedit flymake-cursor auto-complete ace-jump-mode)))
- '(scroll-bar-mode nil)
+   '(rjsx-mode zenburn-theme yasnippet pyflakes pep8 iedit auto-complete ace-jump-mode))
+ '(scroll-bar-mode nil t)
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

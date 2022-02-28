@@ -1,38 +1,142 @@
-;; Take a look at this:
-;; http://ergoemacs.org/emacs/organize_your_dot_emacs.html
-
 ;;
-;; Utility function to keep byte-compiled files updated after edits.
-;;
+;; Dependencies:
+;; * xsel (system) - tool to manage the clipboard
+;; * inconsolata font (system)
+;; * use-package repo (.emacs.d) - https://github.com/jwiegley/use-package
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; TODO:
+;; * use ensure-system-package to verify system dependencies? https://github.com/jwiegley/use-package#use-package-ensure-system-package
+
+(require 'package)
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-(defun byte-compile-current-buffer ()
-  "`byte-compile' current buffer if it's emacs-lisp-mode and compiled file exists."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;          Utilities            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ref: https://gist.github.com/ktabata/4362498
+;; Copy/paste from emacs-nox to/from the clipboard
+(defun x-paste ()  ;; not bound... can used "C-V" (pre-existent "xterm-paste")
+  "insert text on X11's clipboard to current buffer."
   (interactive)
-  (when (and (eq major-mode 'emacs-lisp-mode)
-             (file-exists-p (byte-compile-dest-file buffer-file-name)))
-    (byte-compile-file buffer-file-name)))
+  (insert-string (shell-command-to-string "xsel -b"))
+  (message "Pasted from clipboard"))
+(defun x-copy ()
+  "copy text on local kill-ring to X11's clipboard."
+  (interactive)
+  (copy-region-as-kill (point) (mark t))
+  (let ((process-connection-type nil))
+      (let ((proc (start-process "xsel" "*Messages*" "xsel" "-i" "-b")))
+        (process-send-string proc (car kill-ring))
+        (process-send-eof proc)))
+  (message "Copied to clipboard"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;      GUI configuration        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; GUI customizations
-(load "~/.emacs.d/conf/man-emacs-gui.el")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(erc-modules
+   '(autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring scrolltobottom stamp track))
+ '(fill-column 99)
+ '(inhibit-startup-screen t)
+ '(js-indent-level 2)
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   '(exec-path-from-shell toml-mode rust-playground company yasnippet flycheck lsp-ui lsp-mode rustic iedit ace-jump-mode auto-complete find-things-fast zenburn-theme use-package smex))
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
+ '(toggle-truncate-lines 1))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(rst-level-1-face ((t (:background "dim gray" :foreground "light sky blue"))) t)
+ '(rst-level-2-face ((t (:background "dim gray" :foreground "light goldenrod"))) t)
+ '(rst-level-3-face ((t (:background "dim gray" :foreground "LightCyan1"))) t)
+ '(rst-level-4-face ((t (:background "dim gray" :foreground "chocolate1"))) t)
+ '(rst-level-5-face ((t (:background "dim gray" :foreground "pale green"))) t)
+ '(rst-level-6-face ((t (:background "dim gray" :foreground "aquamarine"))) t))
 
-;; General (re-)bindings
-(load "~/.emacs.d/conf/man-emacs-bindings.el")
+;; Use "y or n" insteas of "yes or no + ENTER".
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; Repositories
-(load "~/.emacs.d/conf/man-emacs-repositories.el")
+;; Depends on the inconsolata font being installed in the system. It's worth it.
+(set-frame-font "inconsolata-11")
+;; Set the face in all frames, so emacs can run as daemon.
+(setq default-frame-alist '((font . "inconsolata-11")))
 
-;; Theme/s
-(load "~/.emacs.d/conf/man-emacs-themes.el")
+;; PEP8 (and good taste) indicate 4-space tabs.
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 
-;; Plugins (auto-complete, ace-jump, pyflakes, etc)
-(load "~/.emacs.d/conf/man-emacs-plugins.el")
+;; Remove whitespace when saving prog files
+(add-hook 'before-save-hook 'delete-prog-whitespace)
+(defun delete-prog-whitespace ()
+  (when (derived-mode-p 'prog-mode)
+    (delete-trailing-whitespace)))
 
-;; Special modes (mail utils and my-write-mode)
-(load "~/.emacs.d/conf/man-emacs-misc.el")
+(use-package zenburn-theme
+  :ensure t
+  :config (load-theme 'zenburn t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;       Special bindings        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Resize windows using the arrow keys
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+;; Toggle truncate with F12
+(global-set-key [f12] 'toggle-truncate-lines)
+
+;; Move the other window fast
+(global-set-key (kbd "M-1") 'other-window)
+
+;; Comment or uncomment region.
+(global-set-key (kbd "C-c C-j") 'comment-or-uncomment-region)
+
+;; Copy/Paste to clipboard (see defun's at .emacs)
+(global-set-key (kbd "C-M-c") #'x-copy)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package smex
+  :ensure t
+  :bind ("M-x" . smex)
+  :config (smex-initialize))
+
+(use-package auto-complete
+  :ensure t
+  :config
+  (ac-config-default)
+  ;; set auto-complet-mode for every buffer but the minibuffer
+  (defun auto-complete-mode-maybe ()
+    (unless (minibufferp (current-buffer))
+      (auto-complete-mode 1))))
+
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-c SPC" . ace-jump-mode))
+
+(use-package iedit
+  :ensure t
+  :bind (("C-\\" . iedit-mode) ;; gnome-terminal doesn't let "C-;" nor "C-'", so rebind iedit-mode
+         ("\\" . #'iedit-show/hide-context-lines))
+  :config
+  (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
+
+;; For Rust: load rustic with rust-analyzer & a bunch of goodies
+(load "~/.emacs.d/rust-ide.el")

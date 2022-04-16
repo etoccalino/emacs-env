@@ -49,10 +49,11 @@
  '(fill-column 99)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
- '(menu-bar-mode nil)
  '(package-selected-packages
    '(exec-path-from-shell toml-mode rust-playground company yasnippet flycheck lsp-ui lsp-mode rustic iedit ace-jump-mode auto-complete find-things-fast zenburn-theme use-package smex))
+ '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
+ '(tool-bar-mode nil)
  '(show-paren-mode t)
  '(toggle-truncate-lines 1))
 (custom-set-faces

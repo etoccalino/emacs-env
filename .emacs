@@ -119,6 +119,10 @@
   :bind ("M-x" . smex)
   :config (smex-initialize))
 
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
+
 (use-package auto-complete
   :ensure t
   :config

@@ -149,3 +149,7 @@
 
 ;; For Rust: load rustic with rust-analyzer & a bunch of goodies
 (load "~/.emacs.d/rust-ide.el")
+
+;; For python, expecting to have python-lsp-server installed
+;; (use `pip install python-lsp-server[all]` in your venv)
+(load "~/.emacs.d/python-ide.el")

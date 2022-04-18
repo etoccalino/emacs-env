@@ -34,6 +34,10 @@
         (process-send-eof proc)))
   (message "Copied to clipboard"))
 
+;; Set ":ensure" for all packages
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;      GUI configuration        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

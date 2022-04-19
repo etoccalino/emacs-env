@@ -10,6 +10,8 @@
               ("M-j" . lsp-ui-imenu)
               ("M-?" . lsp-find-references)
               ("C-c C-c l" . flycheck-list-errors)
+              ("C-c C-c C-n" . flycheck-next-error)
+              ("C-c C-c C-p" . flycheck-previous-error)
               ("C-c C-c a" . lsp-execute-code-action)
               ("C-c C-c r" . lsp-rename)
               ("C-c C-c q" . lsp-workspace-restart)

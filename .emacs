@@ -124,6 +124,8 @@
 (use-package which-key
   :init (which-key-mode))
 
+(use-package yaml-mode)
+
 (use-package auto-complete
   :config
   (ac-config-default)

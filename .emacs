@@ -91,7 +91,6 @@
     (delete-trailing-whitespace)))
 
 (use-package zenburn-theme
-  :ensure t
   :config (load-theme 'zenburn t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -119,16 +118,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package smex
-  :ensure t
   :bind ("M-x" . smex)
   :config (smex-initialize))
 
 (use-package which-key
-  :ensure t
   :init (which-key-mode))
 
 (use-package auto-complete
-  :ensure t
   :config
   (ac-config-default)
   ;; set auto-complet-mode for every buffer but the minibuffer
@@ -137,11 +133,9 @@
       (auto-complete-mode 1))))
 
 (use-package ace-jump-mode
-  :ensure t
   :bind ("C-c SPC" . ace-jump-mode))
 
 (use-package iedit
-  :ensure t
   :bind (("C-\\" . iedit-mode) ;; gnome-terminal doesn't let "C-;" nor "C-'", so rebind iedit-mode
          ("\\" . #'iedit-show/hide-context-lines))
   :config

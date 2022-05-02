@@ -143,6 +143,9 @@
   :config
   (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
 
+(use-package beacon
+  :init (beacon-mode))
+
 ;; For Rust: load rustic with rust-analyzer & a bunch of goodies
 (load "~/.emacs.d/rust-ide.el")
 

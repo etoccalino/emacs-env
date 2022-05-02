@@ -59,6 +59,7 @@
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(show-paren-mode t)
+ '(x-select-enable-clipboard t)
  '(toggle-truncate-lines 1))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

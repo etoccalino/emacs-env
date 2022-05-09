@@ -144,6 +144,10 @@
   :config
   (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
 
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 (use-package beacon
   :init (beacon-mode))
 

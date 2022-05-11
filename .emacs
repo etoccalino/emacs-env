@@ -144,12 +144,11 @@
   :config
   (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
 
-(use-package org-bullets
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
 (use-package beacon
   :init (beacon-mode))
+
+(use-package org-superstar
+  :config (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 ;; For Rust: load rustic with rust-analyzer & a bunch of goodies
 (load "~/.emacs.d/rust-ide.el")

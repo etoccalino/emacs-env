@@ -3,6 +3,7 @@
 ;; * xsel (system) - tool to manage the clipboard
 ;; * inconsolata font (system)
 ;; * use-package repo (.emacs.d) - https://github.com/jwiegley/use-package
+;; * fzf (system) - file fuzzy finder - https://github.com/junegunn/fzf
 
 ;; TODO:
 ;; * use ensure-system-package to verify system dependencies? https://github.com/jwiegley/use-package#use-package-ensure-system-package
@@ -149,6 +150,9 @@
 
 (use-package org-superstar
   :config (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+
+(use-package fzf
+  :bind (("C-x M-f" . fzf-git-files)))
 
 ;; For Rust: load rustic with rust-analyzer & a bunch of goodies
 (load "~/.emacs.d/rust-ide.el")

@@ -128,6 +128,8 @@
 
 (use-package yaml-mode)
 
+(use-package dockerfile-mode)
+
 (use-package auto-complete
   :config
   (ac-config-default)

@@ -141,11 +141,13 @@
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
 
-(use-package iedit
-  :bind (("C-\\" . iedit-mode) ;; gnome-terminal doesn't let "C-;" nor "C-'", so rebind iedit-mode
-         ("\\" . #'iedit-show/hide-context-lines))
-  :config
-  (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
+(use-package iedit)
+  ;; DISABLING below configs: I can't make it work right for both NOX and GUI, so I'm choosing GUI.
+  ;;
+  ;; :bind (("C-\\" . iedit-mode) ;; gnome-terminal doesn't let "C-;" nor "C-'", so rebind iedit-mode
+  ;;        ("\\" . #'iedit-show/hide-context-lines))
+  ;; :config
+  ;; (define-key isearch-mode-map (kbd "C-\\") #'iedit-mode-from-isearch))
 
 (use-package beacon
   :init (beacon-mode))

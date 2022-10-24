@@ -79,9 +79,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Depends on the inconsolata font being installed in the system. It's worth it.
-(set-frame-font "inconsolata-11")
+(set-frame-font "inconsolata-13")
 ;; Set the face in all frames, so emacs can run as daemon.
-(setq default-frame-alist '((font . "inconsolata-11")))
+(setq default-frame-alist '((font . "inconsolata-13")))
 
 ;; PEP8 (and good taste) indicate 4-space tabs.
 (setq-default tab-width 4)

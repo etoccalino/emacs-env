@@ -13,7 +13,8 @@
               ("C-c C-c Q" . lsp-workspace-shutdown)
               ("C-c C-c h" . lsp-ui-doc-glance))
   :config (lsp-headerline-breadcrumb-mode)
-    (setq read-process-output-max 8192))
+    (setq read-process-output-max 8192)
+    (setq lsp-eldoc-enable-hover nil))
 
 (use-package lsp-ui
   :ensure

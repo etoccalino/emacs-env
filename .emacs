@@ -62,7 +62,7 @@
  '(tool-bar-mode nil)
  '(show-paren-mode t)
  '(x-select-enable-clipboard t)
- '(toggle-truncate-lines 1))
+ '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

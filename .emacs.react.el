@@ -13,13 +13,12 @@
 
 (use-package lsp-mode
   :ensure
-  :commands lsp
+  :hook ((js-mode js-jsx-mode js-ts-mode js-json-mode js-base-mode) . lsp)
   :bind (:map lsp-mode-map
               ("M-?" . lsp-find-references)
               ("C-c C-c l" . flycheck-list-errors)
               ("C-c C-c C-n" . flycheck-next-error)
               ("C-c C-c C-p" . flycheck-previous-error))
-  :hook ((js-mode js-jsx-mode js-ts-mode js-json-mode js-base-mode) . #'lsp-mode)
   :config
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 (use-package lsp-treemacs :ensure)

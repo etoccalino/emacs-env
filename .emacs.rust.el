@@ -1,3 +1,9 @@
+;; Rust config. Supposed to be used with ~/.emacs.d.rust directory as home.
+;;
+
+;; Load the common configs
+(load "~/.emacs.base.el")
+
 ;; Original guide in https://robert.kra.hn/posts/2021-02-07_rust-with-emacs/
 ;;
 ;; Configs taken from https://github.com/rksm/emacs-rust-config/blob/master/init.el
@@ -57,7 +63,7 @@
   :ensure
   :commands lsp-ui-mode
   :custom
-  (lsp-ui-peek-always-show t)
+  (lsp-ui-peek-always-show nil)
   (lsp-ui-sideline-show-hover nil)
   (lsp-ui-doc-enable nil))
 
@@ -116,12 +122,6 @@
         (if (check-expansion)
             (company-complete-common)
           (indent-for-tab-command)))))
-
-
-;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-;; Create / cleanup rust scratch projects quickly
-
-(use-package rust-playground :ensure)
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

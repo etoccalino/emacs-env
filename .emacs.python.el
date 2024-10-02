@@ -1,3 +1,9 @@
+;; Python config. Supposed to be used with ~/.emacs.d.python directory as home.
+;;
+
+;; Load the common configs
+(load "~/.emacs.base.el")
+
 (use-package lsp-mode
   :ensure
   :hook (python-mode . lsp)
@@ -19,3 +25,5 @@
 (use-package lsp-ui
   :ensure
   :defer t)
+
+(use-package dockerfile-mode)

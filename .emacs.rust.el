@@ -23,7 +23,6 @@
               ("C-c C-c Q" . lsp-workspace-shutdown)
               ("C-c C-c s" . lsp-rust-analyzer-status)
               ("C-c C-c e" . lsp-rust-analyzer-expand-macro)
-              ("C-c C-c d" . dap-hydra)
               ("C-c C-c h" . lsp-ui-doc-glance))
   :custom
   (rustic-format-on-save t))
@@ -32,9 +31,12 @@
   :hook lsp-ui-mode
   :custom
   (lsp-rust-analyzer-cargo-watch-command "clippy")
+  (lsp-rust-analyzer-server-display-inlay-hints t)
   (lsp-ui-doc-show-with-cursor nil)
   (lsp-ui-doc-show-with-mouse nil)
-  (lsp-rust-analyzer-server-display-inlay-hints t))
+  ;; See: https://emacs-lsp.github.io/lsp-mode/page/performance/
+  (read-process-output-max 8192)
+  (gc-cons-threshold 100000000))
 
 (use-package lsp-ui
   :defer t

@@ -5,7 +5,6 @@
 (load "~/.emacs.base.el")
 
 (use-package lsp-mode
-  :ensure
   :hook (python-mode . lsp)
   :bind (:map lsp-mode-map
               ("M-j" . lsp-ui-imenu)
@@ -18,12 +17,20 @@
               ("C-c C-c q" . lsp-workspace-restart)
               ("C-c C-c Q" . lsp-workspace-shutdown)
               ("C-c C-c h" . lsp-ui-doc-glance))
-  :config (lsp-headerline-breadcrumb-mode)
-    (setq read-process-output-max 8192)
-    (setq lsp-eldoc-enable-hover nil))
+  :custom
+  (lsp-ui-doc-show-with-cursor nil)
+  (lsp-ui-doc-show-with-mouse nil)
+  ;; See: https://emacs-lsp.github.io/lsp-mode/page/performance/
+  (read-process-output-max 8192)
+  (gc-cons-threshold 100000000))
 
 (use-package lsp-ui
-  :ensure
-  :defer t)
+  :defer t
+  :custom
+  (lsp-ui-sideline-show-hover nil))
+
+(use-package lsp-treemacs)
+
+(use-package flycheck)
 
 (use-package dockerfile-mode)

@@ -7,6 +7,9 @@
 ;; * inconsolata font (system)
 ;; * use-package repo (.emacs.d) - https://github.com/jwiegley/use-package
 ;; * fzf (system) - file fuzzy finder - https://github.com/junegunn/fzf
+;;
+;; First time use:
+;; * Run `M-x treesit-install-language-grammar` once to download the language support for tree-sitter.
 
 ;; TODO:
 ;; * use ensure-system-package to verify system dependencies? https://github.com/jwiegley/use-package#use-package-ensure-system-package

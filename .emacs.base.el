@@ -71,10 +71,9 @@
 ;; Use "y or n" insteas of "yes or no + ENTER".
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Depends on the inconsolata font being installed in the system. It's worth it.
-(set-frame-font "inconsolata-13")
-;; Set the face in all frames, so emacs can run as daemon.
-(setq default-frame-alist '((font . "inconsolata-13")))
+;; ;; Depends on the inconsolata font being installed in the system. It's worth it.
+(add-to-list 'default-frame-alist
+             '(font . "inconsolata-13"))
 
 ;; PEP8 (and good taste) indicate 4-space tabs.
 (setq-default tab-width 4)
@@ -110,6 +109,29 @@
 
 ;; Copy/Paste to clipboard (see defun's at .emacs)
 (global-set-key (kbd "C-M-c") #'x-copy)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;       Treesitter config       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq treesit-language-source-alist
+      '((bash       "https://github.com/tree-sitter/tree-sitter-bash")
+        (rust       "https://github.com/tree-sitter/tree-sitter-rust")
+        (css        "https://github.com/tree-sitter/tree-sitter-css")
+        (go         "https://github.com/tree-sitter/tree-sitter-go")
+        (html       "https://github.com/tree-sitter/tree-sitter-html")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+        (json       "https://github.com/tree-sitter/tree-sitter-json")
+        (python     "https://github.com/tree-sitter/tree-sitter-python")
+        (toml       "https://github.com/tree-sitter/tree-sitter-toml")
+        (tsx        "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+        (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+
+        (make "https://github.com/alemuller/tree-sitter-make")
+        (cmake "https://github.com/uyha/tree-sitter-cmake")
+        (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+        (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+        (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

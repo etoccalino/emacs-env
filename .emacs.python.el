@@ -31,6 +31,9 @@
 
 (use-package lsp-treemacs)
 
+(use-package neotree
+  :bind ([f8] . neotree-toggle))
+
 (use-package flycheck)
 
 (use-package dockerfile-mode)

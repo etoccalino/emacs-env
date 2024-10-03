@@ -54,10 +54,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
+ '(line-number-mode nil)
+ '(column-number-mode nil)
  '(fill-column 99)
  '(inhibit-startup-screen t)
- '(js-indent-level 2)
  '(menu-bar-mode nil)
  '(mouse-yank-at-point t)
  '(scroll-bar-mode nil)
@@ -65,6 +65,8 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(truncate-lines t))
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Use "y or n" insteas of "yes or no + ENTER".
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -129,3 +131,6 @@
 
 (use-package fzf
   :bind (("C-x M-f" . fzf-git-files)))
+
+(use-package ace-jump-mode
+  :bind ("C-c SPC" . ace-jump-mode))

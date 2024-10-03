@@ -14,9 +14,6 @@
     (unless (minibufferp (current-buffer))
       (auto-complete-mode 1))))
 
-(use-package ace-jump-mode
-  :bind ("C-c SPC" . ace-jump-mode))
-
 (use-package org-superstar
   :config (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 

@@ -1,5 +1,7 @@
 ;; JS+React config. Supposed to be used with ~/.emacs.d.react directory as home.
 ;;
+;; First time use:
+;; * Install the "all-the-icons" set for neo-tree: `M-x all-the-icons-install-fonts` and then run `fc-cache -f -v` in the system.
 
 ;; Load the common configs
 (load "~/.emacs.base.el")
@@ -20,7 +22,6 @@
               ("C-c C-c h" . lsp-ui-doc-glance))
   :config
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  ;; (js-indent-level 2)
   :custom
   ;; See: https://emacs-lsp.github.io/lsp-mode/page/performance/
   (read-process-output-max 8192)
@@ -32,6 +33,10 @@
 (use-package neotree
   :bind ([f8] . neotree-toggle))
 
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :custom (neo-theme 'icons))
+
 (use-package helm)
 
 (use-package helm-lsp)
@@ -41,7 +46,7 @@
 (use-package projectile)
 
 (use-package company
-  :bind (([remap find-file] . #'helm-find-files)
+  :bind (([remap list-buffers] . #'helm-buffers-list)
          ([remap execute-extended-command] . #'helm-M-x)
          ([switch-to-buffer] . #'helm-mini))
   :custom
@@ -49,6 +54,8 @@
   (company-minimum-prefix-length 1))
 
 (use-package flycheck)
+
+(use-package dockerfile-mode)
 
 (use-package json-mode)
 

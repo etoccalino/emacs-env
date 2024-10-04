@@ -1,5 +1,7 @@
 ;; Rust config. Supposed to be used with ~/.emacs.d.rust directory as home.
 ;;
+;; First time use:
+;; * Install the "all-the-icons" set for neo-tree: `M-x all-the-icons-install-fonts` and then run `fc-cache -f -v` in the system.
 
 ;; Load the common configs
 (load "~/.emacs.base.el")
@@ -47,6 +49,10 @@
 
 (use-package neotree
   :bind ([f8] . neotree-toggle))
+
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :custom (neo-theme 'icons))
 
 (use-package flycheck)
 

@@ -2,6 +2,11 @@
 Don't know how good it may be, but I could check it out: https://emacs-lsp.github.io/lsp-mode/tutorials/reactjs-tutorial/
 
 
+* Build a config for golang
+Will need it for portal-api.
+Somewhere to start: https://arnesonium.com/2023/08/configuring-emacs-29-1-for-golang
+
+
 * Treesitter: how to use it?
 Seems to be a new way to navigate code.
 Shoud test this guide, although it might be a bit outdated: https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
@@ -22,9 +27,24 @@ Now that the language sources are specified in the base config, remove it from .
 ...but still don't know how to use treesite to effectively navigate. I use `M-h` and `M-S-h` but it's normal mark-paragraph.
 
 
+* Is it time to finally start using Magit?
+treemacs integrates with it.
+
+
 * Project directory tree navigator
 I'm getting used to using it, specially for large projects.
 I really like the screenshot in: https://github.com/emacs-lsp/lsp-treemacs (but there's no link or reference to how it's achieved XD)
+
+** I already have treemacs and lsp-treemacs!?
+Apparently, I already had a project navigator system. Integrated to LSP, too.
+https://github.com/Alexander-Miller/treemacs
+https://github.com/emacs-lsp/lsp-treemacs
+
+*** Investigate git-mode
+https://github.com/Alexander-Miller/treemacs?tab=readme-ov-file#git-mode
+*** Investigate filewatch-mode
+https://github.com/Alexander-Miller/treemacs?tab=readme-ov-file#filewatch-mode
+
 
 ** Projectile + Neotree
 *** Projectile, learn how to use it

@@ -8,6 +8,8 @@ Somewhere to start: https://arnesonium.com/2023/08/configuring-emacs-29-1-for-go
 
 
 * Treesitter: how to use it?
+ANSWER: via a lib. Emacs enables tree-sitter (which is used by many editors), and a lib uses it. Emacs has `combobulate`. I reviewed it and think the best I'll get is navigation.
+
 Seems to be a new way to navigate code.
 Shoud test this guide, although it might be a bit outdated: https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 Double down on Emacs and get the damn book? https://www.masteringemacs.org/ (might lead to more, rather than less study time)
@@ -31,7 +33,7 @@ Now that the language sources are specified in the base config, remove it from .
 treemacs integrates with it.
 
 
-* Project directory tree navigator
+* DONE Project directory tree navigator
 I'm getting used to using it, specially for large projects.
 I really like the screenshot in: https://github.com/emacs-lsp/lsp-treemacs (but there's no link or reference to how it's achieved XD)
 
@@ -42,11 +44,14 @@ https://github.com/emacs-lsp/lsp-treemacs
 
 *** Investigate git-mode
 https://github.com/Alexander-Miller/treemacs?tab=readme-ov-file#git-mode
+Seems to already be activated
 *** Investigate filewatch-mode
 https://github.com/Alexander-Miller/treemacs?tab=readme-ov-file#filewatch-mode
+Seems to already be activated
 
 
 ** Projectile + Neotree
+Cancelled in favor of treemacs.
 *** Projectile, learn how to use it
 https://github.com/bbatsov/projectile
 Adds support for "search across project", which is the find-all-references I want :)

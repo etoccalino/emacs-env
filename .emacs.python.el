@@ -9,8 +9,9 @@
 (use-package lsp-mode
   :hook (python-mode . lsp)
   :bind (:map lsp-mode-map
-              ("M-j" . lsp-ui-imenu)
-              ("M-?" . lsp-find-references)
+              ("M-?" . (lambda() (interactive) (lsp-treemacs-references t)))
+              ("C-M-?" . lsp-treemacs-references)
+              ("C-c C-c L" . lsp-treemacs-errors-list)
               ("C-c C-c l" . flycheck-list-errors)
               ("C-c C-c C-n" . flycheck-next-error)
               ("C-c C-c C-p" . flycheck-previous-error)
@@ -31,14 +32,12 @@
   :custom
   (lsp-ui-sideline-show-hover nil))
 
-(use-package lsp-treemacs)
+(use-package treemacs
+  :defer
+  :bind ([f8] . treemacs))
 
-(use-package neotree
-  :bind ([f8] . neotree-toggle))
-
-(use-package all-the-icons
-  :if (display-graphic-p)
-  :custom (neo-theme 'icons))
+(use-package lsp-treemacs
+  :after lsp)
 
 (use-package flycheck)
 

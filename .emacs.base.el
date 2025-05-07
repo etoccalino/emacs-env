@@ -151,6 +151,9 @@
 (use-package beacon
   :init (beacon-mode))
 
+(use-package move-text
+  :init (move-text-default-bindings))
+
 (use-package fzf
   :bind (("C-x M-f" . fzf-git-files)))
 

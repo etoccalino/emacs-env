@@ -1,3 +1,11 @@
+* eglot instead of lsp-mode?
+https://github.com/joaotavora/eglot
+** Feature comparison
+   - lsp-mode features: https://emacs-lsp.github.io/lsp-mode/
+   - eglot features: https://www.gnu.org/software/emacs/manual/html_node/eglot/Eglot-Features.html#Eglot-Features
+   According to reddit dwellers, lsp-mode has more features, but eglot just works and it supports the main features anyways.
+
+
 * React tutorial in emacs
 Don't know how good it may be, but I could check it out: https://emacs-lsp.github.io/lsp-mode/tutorials/reactjs-tutorial/
 
@@ -7,7 +15,7 @@ Will need it for portal-api.
 Somewhere to start: https://arnesonium.com/2023/08/configuring-emacs-29-1-for-golang
 
 
-* Treesitter: how to use it?
+* DONE Treesitter: how to use it?
 ANSWER: via a lib. Emacs enables tree-sitter (which is used by many editors), and a lib uses it. Emacs has `combobulate`. I reviewed it and think the best I'll get is navigation.
 
 Seems to be a new way to navigate code.

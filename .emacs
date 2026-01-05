@@ -84,9 +84,6 @@
 ;;; Editing Enhancements
 ;;;; ----------------------------------------------------------------------------
 
-;; Simultaneously edit multiple occurrences
-(use-package iedit)
-
 ;; Move lines/regions up and down
 (use-package move-text
   :init (move-text-default-bindings))

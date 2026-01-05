@@ -1,12 +1,6 @@
 To use indipendent configs, I'm using aliases to lunch emacs. My .bash_aliases contains:
 
 ```
-alias e="~/bin/shoot.sh emacs"
-alias ep="~/bin/shoot.sh 'emacs -q -l ~/.emacs.python.el  --init-directory=~/.emacs.d.python'"
-alias er="~/bin/shoot.sh 'emacs -q -l ~/.emacs.rust.el  --init-directory=~/.emacs.d.rust'"
-alias ej="~/bin/shoot.sh 'emacs -q -l ~/.emacs.react.el  --init-directory=~/.emacs.d.react'"
-alias ee="emacs -nw --no-splash"
-alias ec="gnome-terminal -- emacs"
+alias e="emacs -nw --no-splash"
 ```
 
-Note that you might have to preemtively create the init directories.

@@ -19,19 +19,19 @@
 (eval-when-compile
   (require 'use-package))
 
+(setq use-package-always-ensure t)
+
 ;;;; ----------------------------------------------------------------------------
 ;;; Theme and UI
 ;;;; ----------------------------------------------------------------------------
 
 ;; Low-contrast dark theme designed to reduce eye strain
 (use-package zenburn-theme
-  :ensure t
   :config
   (load-theme 'zenburn t))
 
 ;; Visual beacon that highlights cursor after jumps
 (use-package beacon
-  :ensure t
   :config
   (beacon-mode 1))
 
@@ -73,7 +73,6 @@
 
 ;; Fuzzy file finder integration
 (use-package fzf
-  :ensure t
   :bind ("C-x M-f" . fzf-find-file))
 
 ;; Rapid cursor navigation using character labels
@@ -90,7 +89,6 @@
 
 ;; Markdown editing mode
 (use-package markdown-mode
-  :ensure t
   :mode ("\\.md\\'" . markdown-mode)
   :init (setq markdown-command "multimarkdown"))
 

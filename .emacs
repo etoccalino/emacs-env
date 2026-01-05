@@ -84,8 +84,9 @@
 ;;;; ----------------------------------------------------------------------------
 
 ;; Move lines/regions up and down
-(use-package move-text
-  :init (move-text-default-bindings))
+(use-package drag-stuff
+  :bind (("C-<up>" . drag-stuff-up )
+         ("C-<down>" . drag-stuff-down )))
 
 ;; Markdown editing mode
 (use-package markdown-mode

@@ -99,6 +99,10 @@
   (when (derived-mode-p 'prog-mode)
     (delete-trailing-whitespace)))
 
+;; iEdit for multi-edits
+(use-package iedit
+  :bind ("C-\\" . iedit-mode))
+
 ;;;; ----------------------------------------------------------------------------
 ;;; Keybindings
 ;;;; ----------------------------------------------------------------------------
